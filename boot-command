@@ -1,0 +1,1 @@
+bzImage root=PARTUUID=${partition-uuid} rootwait console=ttyS0
