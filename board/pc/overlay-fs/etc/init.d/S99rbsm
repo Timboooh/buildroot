@@ -1,0 +1,19 @@
+#!/bin/sh
+# /etc/init.d/rbsm
+
+case "$1" in
+    start)
+        echo "Starting RBSM"
+        nohup /root/drmtest -u 60 -s 1 &
+        ;;
+    stop)
+        echo "Stopping RBSM"
+        killall drmtest 
+        ;;
+    *)
+        echo "Usage: /etc/init.d/rbsm {start|stop}"
+        exit 1
+        ;;
+esac
+
+exit 0
