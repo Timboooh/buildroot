@@ -4,9 +4,11 @@
 case "$1" in
     start)
         echo "Starting RBSM"
-        nohup /root/drmtest -u 5 -s 1 &
-        dmesg | grep input
+        # nohup /root/drmtest -u 5 -s 1 &
+        # dmesg | grep input
         # lspci -k
+	ulimit -c unlimited
+	echo "./core" > /proc/sys/kernel/core_pattern
         ;;
     stop)
         echo "Stopping RBSM"
